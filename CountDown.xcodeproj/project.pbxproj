@@ -17,12 +17,13 @@
 		4B5DB75B17176CC400CBD74F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B5DB75A17176CC400CBD74F /* Default@2x.png */; };
 		4B5DB75D17176CC400CBD74F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B5DB75C17176CC400CBD74F /* Default-568h@2x.png */; };
 		4B5DB76017176CC400CBD74F /* CRBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5DB75F17176CC400CBD74F /* CRBViewController.m */; };
-		4B5DB76317176CC400CBD74F /* CRBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B5DB76117176CC400CBD74F /* CRBViewController.xib */; };
 		4B5DB76B17176CC400CBD74F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B5DB76A17176CC400CBD74F /* SenTestingKit.framework */; };
 		4B5DB76C17176CC400CBD74F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B5DB74617176CC400CBD74F /* UIKit.framework */; };
 		4B5DB76D17176CC400CBD74F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B5DB74817176CC400CBD74F /* Foundation.framework */; };
 		4B5DB77517176CC400CBD74F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4B5DB77317176CC400CBD74F /* InfoPlist.strings */; };
 		4B5DB77817176CC400CBD74F /* CountDownTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B5DB77717176CC400CBD74F /* CountDownTests.m */; };
+		4B5DB782171775B400CBD74F /* CountDown_Icon@57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B5DB781171775B400CBD74F /* CountDown_Icon@57x57.png */; };
+		4B5DB784171775B800CBD74F /* CountDown_Icon@114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 4B5DB783171775B800CBD74F /* CountDown_Icon@114x114.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,13 +52,14 @@
 		4B5DB75C17176CC400CBD74F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4B5DB75E17176CC400CBD74F /* CRBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRBViewController.h; sourceTree = "<group>"; };
 		4B5DB75F17176CC400CBD74F /* CRBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRBViewController.m; sourceTree = "<group>"; };
-		4B5DB76217176CC400CBD74F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CRBViewController.xib; sourceTree = "<group>"; };
 		4B5DB76917176CC400CBD74F /* CountDownTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountDownTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B5DB76A17176CC400CBD74F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		4B5DB77217176CC400CBD74F /* CountDownTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CountDownTests-Info.plist"; sourceTree = "<group>"; };
 		4B5DB77417176CC400CBD74F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4B5DB77617176CC400CBD74F /* CountDownTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CountDownTests.h; sourceTree = "<group>"; };
 		4B5DB77717176CC400CBD74F /* CountDownTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CountDownTests.m; sourceTree = "<group>"; };
+		4B5DB781171775B400CBD74F /* CountDown_Icon@57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CountDown_Icon@57x57.png"; sourceTree = "<group>"; };
+		4B5DB783171775B800CBD74F /* CountDown_Icon@114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CountDown_Icon@114x114.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,8 @@
 		4B5DB73A17176CC300CBD74F = {
 			isa = PBXGroup;
 			children = (
+				4B5DB783171775B800CBD74F /* CountDown_Icon@114x114.png */,
+				4B5DB781171775B400CBD74F /* CountDown_Icon@57x57.png */,
 				4B5DB74C17176CC400CBD74F /* CountDown */,
 				4B5DB77017176CC400CBD74F /* CountDownTests */,
 				4B5DB74517176CC400CBD74F /* Frameworks */,
@@ -121,7 +125,6 @@
 				4B5DB75617176CC400CBD74F /* CRBAppDelegate.m */,
 				4B5DB75E17176CC400CBD74F /* CRBViewController.h */,
 				4B5DB75F17176CC400CBD74F /* CRBViewController.m */,
-				4B5DB76117176CC400CBD74F /* CRBViewController.xib */,
 				4B5DB74D17176CC400CBD74F /* Supporting Files */,
 			);
 			path = CountDown;
@@ -236,7 +239,8 @@
 				4B5DB75917176CC400CBD74F /* Default.png in Resources */,
 				4B5DB75B17176CC400CBD74F /* Default@2x.png in Resources */,
 				4B5DB75D17176CC400CBD74F /* Default-568h@2x.png in Resources */,
-				4B5DB76317176CC400CBD74F /* CRBViewController.xib in Resources */,
+				4B5DB782171775B400CBD74F /* CountDown_Icon@57x57.png in Resources */,
+				4B5DB784171775B800CBD74F /* CountDown_Icon@114x114.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,14 +308,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		4B5DB76117176CC400CBD74F /* CRBViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4B5DB76217176CC400CBD74F /* en */,
-			);
-			name = CRBViewController.xib;
-			sourceTree = "<group>";
-		};
 		4B5DB77317176CC400CBD74F /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -335,7 +331,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Breiding (JV5N44SD65)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Breiding (JV5N44SD65)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -350,6 +347,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -366,14 +365,18 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Breiding (JV5N44SD65)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Breiding (JV5N44SD65)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -382,10 +385,14 @@
 		4B5DB77C17176CC400CBD74F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Breiding (JV5N44SD65)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Breiding (JV5N44SD65)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CountDown/CountDown-Prefix.pch";
 				INFOPLIST_FILE = "CountDown/CountDown-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -393,10 +400,14 @@
 		4B5DB77D17176CC400CBD74F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Breiding (JV5N44SD65)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Breiding (JV5N44SD65)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CountDown/CountDown-Prefix.pch";
 				INFOPLIST_FILE = "CountDown/CountDown-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -454,6 +465,7 @@
 				4B5DB77D17176CC400CBD74F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4B5DB77E17176CC400CBD74F /* Build configuration list for PBXNativeTarget "CountDownTests" */ = {
 			isa = XCConfigurationList;
@@ -462,6 +474,7 @@
 				4B5DB78017176CC400CBD74F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
