@@ -7,18 +7,29 @@
 //
 
 #import "CRBAppDelegate.h"
-
-#import "CRBViewController.h"
+#import "CRBCountDownListViewController.h"
+#import "CRBCountDownDocument.h"
 
 @implementation CRBAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.viewController = [[CRBViewController alloc] init];
-    self.window.rootViewController = self.viewController;
-    [self.window makeKeyAndVisible];
+    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+    CRBCountDownListViewController *controller = (CRBCountDownListViewController *)navigationController.topViewController;
+    NSURL *docDir = [[[NSFileManager defaultManager]
+                      URLsForDirectory:NSDocumentDirectory
+                      inDomains:NSUserDomainMask] lastObject];
+    NSURL *docURL = [docDir URLByAppendingPathComponent:@"CountDowns.countDowns"];
+    CRBCountDownDocument *doc = [[CRBCountDownDocument alloc] initWithFileURL:docURL];
+    controller.dataSource = doc;
+    [doc openWithCompletionHandler:^(BOOL success) {
+        if(success) {
+            [controller.tableView reloadData];
+        } else {
+            NSLog(@"Failed to open document");
+        }
+    }];
+    
     return YES;
 }
 

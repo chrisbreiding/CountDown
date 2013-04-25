@@ -8,12 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@class CRBViewController;
-
 @interface CRBAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
-@property (strong, nonatomic) CRBViewController *viewController;
 
 @end

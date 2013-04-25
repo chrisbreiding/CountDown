@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="JKt-9I-DWY">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Count Down List View Controller - CountDowns-->
+        <scene sceneID="YdH-TN-B4n">
+            <objects>
+                <tableViewController id="fUh-u4-k9E" customClass="CRBCountDownListViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="7iB-IC-P6R">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="countdown" textLabel="7ex-X0-lMt" detailTextLabel="QoD-P6-tSU" style="IBUITableViewCellStyleSubtitle" id="SBC-dh-wey">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ex-X0-lMt">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QoD-P6-tSU">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <segue destination="YNA-ba-EMd" kind="push" identifier="presentCountDownDetail" id="otQ-L9-O4i"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fUh-u4-k9E" id="yrr-i3-RC1"/>
+                            <outlet property="delegate" destination="fUh-u4-k9E" id="644-f5-rXL"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="CountDowns" id="NTw-GO-s2s">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="m3a-tR-Xod">
+                            <connections>
+                                <segue destination="QqC-ck-5Qc" kind="modal" identifier="addNewCountDown" id="Xxl-mh-44C"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="view" destination="7iB-IC-P6R" id="wCb-tV-MBS"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4pK-CJ-hiD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="513" y="31"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="SYk-hW-jkV">
+            <objects>
+                <viewController id="YNA-ba-EMd" customClass="CRBViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oYi-Xx-nGn">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCF-2Q-udk">
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96673318614130432" green="0.95097274153974609" blue="0.35060622267684838" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="YCF-2Q-udk" firstAttribute="leading" secondItem="oYi-Xx-nGn" secondAttribute="leading" type="default" id="OQj-ay-PJw"/>
+                            <constraint firstItem="YCF-2Q-udk" firstAttribute="trailing" secondItem="oYi-Xx-nGn" secondAttribute="trailing" type="default" id="WKN-bm-tN9"/>
+                            <constraint firstItem="YCF-2Q-udk" firstAttribute="bottom" secondItem="oYi-Xx-nGn" secondAttribute="bottom" type="default" id="XDH-Cc-pzB"/>
+                            <constraint firstItem="YCF-2Q-udk" firstAttribute="top" secondItem="oYi-Xx-nGn" secondAttribute="top" type="default" id="dae-9X-CLO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ipt-iv-7BH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Hdc-jB-Zx6">
+                            <connections>
+                                <segue destination="QqC-ck-5Qc" kind="modal" identifier="editExistingCountDown" id="mTJ-bw-n7h"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="daysLeftLabel" destination="YCF-2Q-udk" id="PaS-8a-OXp"/>
+                        <outlet property="view" destination="oYi-Xx-nGn" id="BaB-7c-yff"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Csd-Vp-Vof" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1037" y="31"/>
+        </scene>
+        <!--Count Down Editor View Controller-->
+        <scene sceneID="mpb-kZ-ciT">
+            <objects>
+                <viewController id="gpe-B2-7Rp" customClass="CRBCountDownEditorViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BVs-8e-Avs">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CountDown Name..." minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dFR-wZ-d4d">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gpe-B2-7Rp" id="RZZ-Os-zHO"/>
+                                </connections>
+                            </textField>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name is required" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVN-HO-07W">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="cvB-Pg-fiR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.50196081399917603" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96673318610000003" green="0.9509727415" blue="0.35060622270000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="dFR-wZ-d4d" firstAttribute="top" secondItem="BVs-8e-Avs" secondAttribute="top" constant="57" id="Nsg-XY-W2A"/>
+                            <constraint firstItem="kVN-HO-07W" firstAttribute="top" secondItem="dFR-wZ-d4d" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="PFg-sJ-2be"/>
+                            <constraint firstAttribute="trailing" secondItem="dFR-wZ-d4d" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Vpo-ST-Av4"/>
+                            <constraint firstItem="dFR-wZ-d4d" firstAttribute="leading" secondItem="BVs-8e-Avs" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="bAi-ok-fJr"/>
+                            <constraint firstAttribute="trailing" secondItem="kVN-HO-07W" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="nPn-gN-8OW"/>
+                            <constraint firstItem="kVN-HO-07W" firstAttribute="leading" secondItem="BVs-8e-Avs" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="yVl-CB-WLI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wwR-Ek-txK">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8xa-JD-N8a">
+                            <connections>
+                                <action selector="cancel:" destination="gpe-B2-7Rp" id="IRj-mj-MYv"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="5Ql-0b-YsZ">
+                            <connections>
+                                <action selector="done:" destination="gpe-B2-7Rp" id="9PF-Po-bFq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nameField" destination="dFR-wZ-d4d" id="Sen-bz-okI"/>
+                        <outlet property="nameValidationField" destination="kVN-HO-07W" id="7Sx-ly-kZk"/>
+                        <outlet property="view" destination="BVs-8e-Avs" id="FWZ-EC-Klq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pPX-zm-Fz9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1797" y="792"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fM4-Sd-ZU9">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="JKt-9I-DWY" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="W3m-4f-Pt3">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="fUh-u4-k9E" kind="relationship" relationship="rootViewController" id="sqJ-69-kCR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xFU-N9-cKn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="94" y="31"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5bR-Dc-Fnl">
+            <objects>
+                <navigationController id="QqC-ck-5Qc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xUW-hw-kwA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gpe-B2-7Rp" kind="relationship" relationship="rootViewController" id="HxZ-hi-t3V"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kag-kH-N9S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1271" y="792"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="CRBCountDownEditorViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CRBCountDownEditorViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="nameValidationField" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="CRBCountDownListViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CRBCountDownListViewController.h"/>
+        </class>
+        <class className="CRBViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CRBViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="daysLeftLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="Xxl-mh-44C"/>
+    </inferredMetricsTieBreakers>
+</document>

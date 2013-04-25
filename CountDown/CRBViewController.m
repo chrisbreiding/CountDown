@@ -7,14 +7,11 @@
 //
 
 #import "CRBViewController.h"
+#import "CRBCountDownEditorViewController.h"
+#import "CRBCountDown.h"
 
 @interface CRBViewController ()
 
-@property (strong, nonatomic) UILabel *countdownLabel;
-@property (nonatomic) NSInteger count;
-
-- (void)setViewStyles;
-- (void)setUpCountLabel;
 - (void)setUpSwipeHandlers;
 
 - (void)didSwipeUp:(UISwipeGestureRecognizer *)sender;
@@ -31,30 +28,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setViewStyles];
-    [self setUpCountLabel];
     [self setUpSwipeHandlers];
 }
 
-- (void)setViewStyles {
-    self.view.backgroundColor = [UIColor colorWithRed:0.745 green:0.745 blue:0.094 alpha:1.0];
+- (void)viewWillAppear:(BOOL)animated {
+    self.title = [self.countDown name];
+    self.daysLeftLabel.text = [NSString stringWithFormat:@"%@", [self.countDown daysLeft]];    
 }
 
-- (void)setUpCountLabel {
-    _countdownLabel = [[UILabel alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    _countdownLabel.textAlignment = NSTextAlignmentCenter;
-    _countdownLabel.textColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
-    _countdownLabel.font = [UIFont systemFontOfSize:90];
-    _countdownLabel.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:_countdownLabel];
-
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *countString = [userDefaults objectForKey:@"CountDown"];
-    if (countString == (id)[NSNull null] || countString.length == 0 ) {
-        countString = @"0";
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([@"editExistingCountDown" isEqualToString:segue.identifier]) {
+        UIViewController *topVC = [[segue destinationViewController] topViewController];
+        CRBCountDownEditorViewController *editor = (CRBCountDownEditorViewController *)topVC;
+        editor.delegate = self;
+        editor.countDown = self.countDown;
     }
-    _countdownLabel.text = countString;
-    _count = [countString intValue];
 }
 
 - (void)setUpSwipeHandlers {
@@ -92,19 +80,27 @@
 }
 
 - (void)tryUpdatingCountBy:(int)amount {
-    int newCount = _count + amount;
+    int newCount = [[self.countDown daysLeft] intValue] + amount;
     if (newCount >= 0) {
-        _count = newCount;
+        [self.countDown setDaysLeft:@(newCount)];
         [self updateCount];
     }
 }
 
 - (void)updateCount {
-    NSString *countString = [NSString stringWithFormat:@"%d", _count];
-    _countdownLabel.text = countString;    
+    self.daysLeftLabel.text = [NSString stringWithFormat:@"%@", [self.countDown daysLeft]];
+    [self.delegate countDownChanged:self.countDown];
+}
 
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setObject:countString forKey:@"CountDown"];
+#pragma mark - Edit View Delegate Methods
+
+- (void)countDownChanged:(CRBCountDown *)countDown {
+    self.title = countDown.name;
+    [self.delegate countDownChanged:countDown];
+    [self.dataSource countDownsChanged];    
+}
+
+- (void)editCancelled:(CRBCountDown *)countDown {
 }
 
 @end

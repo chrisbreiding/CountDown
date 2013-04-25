@@ -7,6 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CRBCountDown.h"
+#import "CRBCountDownEditorDelegate.h"
+#import "CRBCountDownListDataSource.h"
 
-@interface CRBViewController : UIViewController
+@interface CRBViewController : UIViewController <CRBCountDownEditorDelegate>
+
+@property(nonatomic, weak) id<CRBCountDownEditorDelegate> delegate;
+@property(nonatomic, strong) id <CRBCountDownListDataSource> dataSource;
+@property (nonatomic, strong)CRBCountDown *countDown;
+@property (nonatomic, strong) IBOutlet UILabel *daysLeftLabel;
+
 @end
