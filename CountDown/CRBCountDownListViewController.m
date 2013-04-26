@@ -53,6 +53,7 @@
         CRBCountDown *countDown = [self.dataSource createCountDown];
         UIViewController *topVC = [[segue destinationViewController] topViewController];
         CRBCountDownEditorViewController *editor = (CRBCountDownEditorViewController *)topVC;
+        editor.title = @"Add CountDown";
         editor.delegate = self;
         editor.countDown = countDown;
     }

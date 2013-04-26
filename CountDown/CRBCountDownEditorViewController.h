@@ -15,6 +15,7 @@
 
 @property(nonatomic, weak) id<CRBCountDownEditorDelegate> delegate;
 
+@property (nonatomic, strong) IBOutlet UIImageView *nameFieldBackground;
 @property (nonatomic, strong) IBOutlet UITextField *nameField;
 @property (nonatomic, strong) IBOutlet UILabel *nameValidationField;
 @property (nonatomic, strong) CRBCountDown *countDown;

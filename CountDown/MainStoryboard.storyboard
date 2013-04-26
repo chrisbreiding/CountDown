@@ -11,7 +11,8 @@
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="7iB-IC-P6R">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="countdown" textLabel="7ex-X0-lMt" detailTextLabel="QoD-P6-tSU" style="IBUITableViewCellStyleSubtitle" id="SBC-dh-wey">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
@@ -96,7 +97,7 @@
             </objects>
             <point key="canvasLocation" x="1037" y="31"/>
         </scene>
-        <!--Count Down Editor View Controller-->
+        <!--Count Down Editor View Controller - Edit CountDown-->
         <scene sceneID="mpb-kZ-ciT">
             <objects>
                 <viewController id="gpe-B2-7Rp" customClass="CRBCountDownEditorViewController" sceneMemberID="viewController">
@@ -104,7 +105,12 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CountDown Name..." minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dFR-wZ-d4d">
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pvL-yb-0EF"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CountDown Name..." minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dFR-wZ-d4d">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="270" id="EQl-A0-UFE"/>
+                                    <constraint firstAttribute="height" constant="30" id="bzy-bn-iNX"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -122,15 +128,18 @@
                         </subviews>
                         <color key="backgroundColor" red="0.96673318610000003" green="0.9509727415" blue="0.35060622270000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="dFR-wZ-d4d" firstAttribute="top" secondItem="BVs-8e-Avs" secondAttribute="top" constant="57" id="Nsg-XY-W2A"/>
-                            <constraint firstItem="kVN-HO-07W" firstAttribute="top" secondItem="dFR-wZ-d4d" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="PFg-sJ-2be"/>
-                            <constraint firstAttribute="trailing" secondItem="dFR-wZ-d4d" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Vpo-ST-Av4"/>
-                            <constraint firstItem="dFR-wZ-d4d" firstAttribute="leading" secondItem="BVs-8e-Avs" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="bAi-ok-fJr"/>
+                            <constraint firstAttribute="trailing" secondItem="dFR-wZ-d4d" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="A0u-Hn-TII"/>
+                            <constraint firstItem="kVN-HO-07W" firstAttribute="top" secondItem="BVs-8e-Avs" secondAttribute="top" constant="90" id="H71-FH-nYQ"/>
+                            <constraint firstItem="dFR-wZ-d4d" firstAttribute="bottom" secondItem="pvL-yb-0EF" secondAttribute="bottom" type="default" id="KpT-9f-DQ3"/>
+                            <constraint firstAttribute="trailing" secondItem="pvL-yb-0EF" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="W06-Ac-2qf"/>
+                            <constraint firstItem="pvL-yb-0EF" firstAttribute="leading" secondItem="BVs-8e-Avs" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="gAN-mr-6io"/>
+                            <constraint firstItem="dFR-wZ-d4d" firstAttribute="top" secondItem="pvL-yb-0EF" secondAttribute="top" type="default" id="hSM-4E-gaK"/>
                             <constraint firstAttribute="trailing" secondItem="kVN-HO-07W" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="nPn-gN-8OW"/>
+                            <constraint firstItem="dFR-wZ-d4d" firstAttribute="top" secondItem="BVs-8e-Avs" secondAttribute="top" constant="50" id="wsx-gg-11Q"/>
                             <constraint firstItem="kVN-HO-07W" firstAttribute="leading" secondItem="BVs-8e-Avs" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="yVl-CB-WLI"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="wwR-Ek-txK">
+                    <navigationItem key="navigationItem" title="Edit CountDown" id="wwR-Ek-txK">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="8xa-JD-N8a">
                             <connections>
                                 <action selector="cancel:" destination="gpe-B2-7Rp" id="IRj-mj-MYv"/>
@@ -144,6 +153,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="nameField" destination="dFR-wZ-d4d" id="Sen-bz-okI"/>
+                        <outlet property="nameFieldBackground" destination="pvL-yb-0EF" id="4xf-7a-SgI"/>
                         <outlet property="nameValidationField" destination="kVN-HO-07W" id="7Sx-ly-kZk"/>
                         <outlet property="view" destination="BVs-8e-Avs" id="FWZ-EC-Klq"/>
                     </connections>
@@ -193,6 +203,7 @@
                 <relationship kind="action" name="cancel:"/>
                 <relationship kind="action" name="done:"/>
                 <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="nameFieldBackground" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="nameValidationField" candidateClass="UILabel"/>
             </relationships>
         </class>

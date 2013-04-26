@@ -15,6 +15,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+
+    UIImage *nameFieldBackground = [[UIImage imageNamed:@"text-field-background.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 10, 0, 10)];
+    self.nameFieldBackground.image = nameFieldBackground;
+    
     self.nameField.text = self.countDown.name;
     [self.nameField becomeFirstResponder];
 }
@@ -22,7 +26,8 @@
 #pragma mark - Text Field Delegate Methods
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    NSString *trimmedName = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    NSString *trimmedName = [textField.text
+                             stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     
     if (trimmedName != nil && ![trimmedName isEqual: @""] ) {
         self.countDown.name = trimmedName;
@@ -38,7 +43,8 @@
 #pragma mark - IB Actions
 
 - (IBAction)done:(id)sender {
-    NSString *trimmedName = [self.nameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    NSString *trimmedName = [self.nameField.text
+                             stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     
     if (trimmedName != nil && ![trimmedName isEqual: @""] ) {
         self.countDown.name = trimmedName;
